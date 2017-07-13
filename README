@@ -1,0 +1,17 @@
+Install Coq and OCaml.
+
+Download CompCert 2.4 from http://compcert.inria.fr/ and unpack it here.
+Rename its directory to compcert (or create a symlink).
+
+In the compcert directory:
+
+  ./configure arm-eabihf
+  make
+  make clightgen
+  make documentation
+
+Get back to the parent directory and run ./compile_viola.  Ignore the warnings.
+
+Run ./vtests/test_genasm.native > n5_cam_vib_invariant.S to save the checks in assembly (in the case the generated invariant is the cam->vib invariant). To change the invariant, edit the vtests/test_genasm.ml file.
+
+
